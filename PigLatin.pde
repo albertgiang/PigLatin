@@ -1,6 +1,5 @@
 public void setup(){
 	String[] lines = loadStrings("words.txt");
-	System.out.println("there are " + lines.length + " lines");
 	for (int i = 0 ; i < lines.length; i++){
 	  System.out.println(pigLatin(lines[i]));
 	}
@@ -32,12 +31,11 @@ public String pigLatin(String sWord)
   
 	if(firstVowelIndex == -1){
 		return sWord + "ay";
-  } else if(firstVowelIndex == 1){
+  } else if(firstVowelIndex == 0){
     return sWord + "way";
 	} else if(sWord.substring(0, 2).equals("qu")){
     return sWord.substring(2) + "qu" + "ay";
   } else {
     return sWord.substring(firstVowelIndex, sWord.length()) + sWord.substring(0, firstVowelIndex) + "ay";
   }
-		//return "ERROR!";
 }
